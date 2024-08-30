@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate LaTeX PDF</title>
+</head>
+<body>
+  <h1>Generate LaTeX PDF</h1>
+  <form id="generate-form" action="/generate" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="usn">USN:</label>
+    <input type="text" id="usn" name="usn" required><br><br>
+
+    <input type="submit" value="Generate PDF">
+  </form>
+  <div id="message"></div>  <script src="script.js"></script>  </body>
+</html>
