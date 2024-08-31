@@ -1,0 +1,66 @@
+\documentclass[a4paper]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{geometry} 
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{eso-pic}
+\usepackage{times}
+\usepackage{setspace}
+\usepackage{textpos}
+\usepackage{fancyhdr}
+\usepackage{natbib} % or biblatex
+\bibliographystyle{plain} % Choose a citation style
+\usepackage{array}
+\usepackage{adjustbox}
+\usepackage{booktabs}
+\usepackage{placeins}
+\usepackage{lipsum}
+\usepackage{etoolbox}
+\usepackage{afterpage}
+
+
+
+\usepackage[dvipsnames]{xcolor}
+\definecolor{blue1}{HTML}{00339a}
+\definecolor{red}{HTML}{ff0000}
+\definecolor{blue2}{HTML}{1f4679}
+
+
+
+\geometry{
+  left=1.05in,  % Left margin
+  right=1in,     % Right margin
+  top=0.9in,    % Top margin
+  bottom=0.75in, % Bottom margin
+}
+
+\def\outerwidth{2.5pt}  % Adjusted outer border thickness
+\def\innerwidth{0.5pt}  % Inner border thickness
+\def\bordersep{0.8pt}  % Separation between borders (optional)
+
+\AddToShipoutPictureBG {
+  \begin{tikzpicture}[overlay, remember picture]
+    % Outer border
+    \draw [line width=\outerwidth] 
+      ($ (current page.north west) + (+1.2cm,-1cm) + (\outerwidth,-\outerwidth) $)
+      rectangle
+      ($ (current page.south east) + (-1.05cm,+1.2cm) + (-\outerwidth,\outerwidth) $);
+
+    % Inner border
+    \draw [line width=\innerwidth]
+      ($ (current page.north west) + (+1.3cm,-1.15cm) + (\outerwidth+\bordersep,-\outerwidth+\bordersep) $)  
+      rectangle
+      ($ (current page.south east) + (-1.15cm,+1.35cm) + (-\outerwidth-\bordersep,\outerwidth-\bordersep) $);
+  \end{tikzpicture}
+}
+
+
+\begin{document}
+
+\include{temp_latex/titlepage}
+
+\end{document}
+
+
+
+
