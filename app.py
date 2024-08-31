@@ -46,7 +46,7 @@ def generate():
     if os.path.exists(pdf_path):
         return send_file(pdf_path, as_attachment=True)
     else:
-        return "PDF generation failed.", 500
+        return "PDF generation faileed.", 500
 
 if __name__ == '__main__':
     app.run(debug=True)
